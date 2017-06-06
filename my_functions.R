@@ -32,20 +32,18 @@ tozsde_plot <- function(number_of_days, my_adatom, list_of_markets){
     titlefont = f
   )
   y <- list(
-    title = "Change (%)",
-    titlefont = f
+    title = "Change (%)"
   )
   
   m <- list(
     l = 100,
-    r = 100,
+    r = 80,
     b = 10,
     t = 150,
     pad = 4
   )
   p<-plot_ly(adatom, x = ~Date, y = ~change, color =~ticker, text= ~Close)%>%
-    add_lines()%>%layout(title = paste(number_of_days, 'Days'), xaxis = x, yaxis = y, height = 900, width = 1200)%>%
-    subplot(nrows=100, shareX = T )
+    add_lines()%>%layout(title = paste(number_of_days, 'Days'), xaxis = x, yaxis = y, height = 800, width = 1100)
   
   return(p)
   
